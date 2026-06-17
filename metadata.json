@@ -1,0 +1,6 @@
+{
+  "name": "ClutchX Motors",
+  "description": "Premium auto repair, diagnostics, and performance shop in Nepean, ON. Built by iWebNext featuring interactive 3D graphics and secure AI chatbot assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
