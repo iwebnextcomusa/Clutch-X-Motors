@@ -1,4 +1,6 @@
 import { Service, BeforeAfterPhoto, Testimonial } from "./types";
+// @ts-ignore
+import brakeUpgradeAfter from "./assets/images/brake_upgrade_after_1781795980048.jpg";
 
 export const BUSINESS_INFO = {
   name: "ClutchX Motors",
@@ -109,7 +111,7 @@ export const BEFORE_AFTER_PHOTOS: BeforeAfterPhoto[] = [
     title: "Carbon Fiber Brake System Upgrade",
     description: "Replaced heavy, faded stock rotors with drilled high-carbon performance discs and carbon-ceramic pads for a customer in Nepean.",
     beforeUrl: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=700&auto=format&fit=crop",
-    afterUrl: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=700&auto=format&fit=crop"
+    afterUrl: brakeUpgradeAfter
   },
   {
     id: "p2",

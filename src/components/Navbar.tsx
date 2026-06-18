@@ -50,42 +50,37 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? "bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800 shadow-xl py-3" 
-        : "bg-zinc-950/40 backdrop-blur-sm border-b border-white/5 py-5"
+        ? "bg-black/85 backdrop-blur-md border-b border-white/10 shadow-xl py-3" 
+        : "bg-black/40 backdrop-blur-sm border-b border-white/5 py-5"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo Brand */}
+          {/* Immersive UI Brand Logo */}
           <div 
             onClick={() => handleNavClick("home")} 
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="relative w-10 h-10 flex items-center justify-center bg-red-600 rounded-lg group-hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20">
-              <span className="font-sans font-black text-xl text-white tracking-widest">X</span>
-              <div className="absolute inset-0 border border-white/30 rounded-lg scale-90"></div>
+            <div className="w-10 h-10 bg-red-600 flex items-center justify-center rounded-sm rotate-45 group-hover:bg-red-700 transition-colors shadow-lg shadow-red-600/20">
+              <span className="-rotate-45 font-black text-xl tracking-tighter text-white">CX</span>
             </div>
-            <div>
-              <div className="flex items-baseline leading-none">
-                <span className="font-sans font-black text-lg tracking-wider text-white">CLUTCH</span>
-                <span className="font-sans font-black text-lg text-red-600">X</span>
-              </div>
-              <span className="text-[9px] font-mono tracking-widest text-zinc-400 uppercase font-medium">Motors Nepean</span>
-            </div>
+            <span className="text-xl sm:text-2xl font-black tracking-tighter uppercase ml-2 italic text-white leading-none">
+              Clutch<span className="text-red-600">X</span> Motors
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1.5 bg-zinc-900/60 p-1.5 rounded-full border border-zinc-800/80">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`px-4 py-1.5 rounded-full font-sans text-xs font-semibold tracking-wider transition-all uppercase duration-300 cursor-pointer ${
+                  className={`font-sans text-xs font-black uppercase tracking-[0.15em] transition-all duration-300 cursor-pointer ${
                     isActive 
-                      ? "bg-red-600 text-white shadow-md shadow-red-600/10" 
-                      : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+                      ? "text-red-500 border-b-2 border-red-600 pb-0.5" 
+                      : "text-gray-400 hover:text-white pb-0.5"
                   }`}
                 >
                   {item.label}
@@ -95,10 +90,10 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
           </div>
 
           {/* Call to action & booking trigger */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-4">
             <a 
               href={`tel:${BUSINESS_INFO.phone}`}
-              className="flex items-center gap-2 px-4 py-2 bg-transparent text-zinc-200 border border-zinc-700 hover:bg-zinc-900 rounded-lg transition-colors font-mono text-xs font-bold tracking-tight"
+              className="flex items-center gap-2 px-3.5 py-2.5 bg-transparent text-gray-300 border border-white/15 hover:bg-white/5 transition-colors font-mono text-xs font-bold tracking-tight"
             >
               <Phone className="w-3.5 h-3.5 text-red-500 animate-pulse" />
               <span>{BUSINESS_INFO.phoneFormatted}</span>
@@ -106,7 +101,7 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
             
             <button
               onClick={() => handleNavClick("contact")}
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors font-sans text-xs font-bold uppercase tracking-wider shadow-lg shadow-red-600/20 cursor-pointer"
+              className="bg-red-600 hover:bg-red-700 px-6 py-3 text-xs font-black uppercase tracking-tighter transition-all text-white cursor-pointer"
             >
               Book Service
             </button>

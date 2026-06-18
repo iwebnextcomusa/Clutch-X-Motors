@@ -128,7 +128,7 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 sm:p-10 text-left">
+    <div className="bg-white/5 border border-white/10 p-6 sm:p-10 text-left backdrop-blur-md shadow-2xl">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         {/* COLUMN 1: Submitting Booking Form */}
@@ -137,10 +137,10 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
             <span className="text-red-500 font-mono text-xs font-bold tracking-widest uppercase">
               RESERVAL PORTAL
             </span>
-            <h3 className="font-sans font-extrabold text-2xl sm:text-3xl text-white tracking-tight mt-1 mb-2">
+            <h3 className="font-sans font-black italic uppercase text-2xl sm:text-3xl text-white tracking-tight mt-1 mb-2 leading-none">
               Book Your Service Appointment
             </h3>
-            <p className="text-zinc-400 font-sans text-xs sm:text-sm">
+            <p className="text-gray-400 font-sans text-xs sm:text-sm">
               Schedule premium auto maintenance or diagnostics in Nepean, ON. Fill out your vehicle specs and mechanical concerns below for direct priority intake booking.
             </p>
           </div>
@@ -150,90 +150,90 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
             {/* Row 1: Contact Specs */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Your Name *</label>
+                <label className="font-mono text-[10px] text-gray-550 uppercase tracking-wider">Your Name *</label>
                 <div className="relative">
-                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                  <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                   <input
                     type="text"
                     required
                     placeholder="Joe Driver"
                     value={customerName}
                     onChange={(e) => setCustomerName(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-xl text-xs font-sans placeholder-zinc-700 outline-none transition-colors"
+                    className="w-full pl-10 pr-3 py-3 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Email Address *</label>
+                <label className="font-mono text-[10px] text-gray-550 uppercase tracking-wider">Email Address *</label>
                 <div className="relative">
-                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                  <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                   <input
                     type="email"
                     required
                     placeholder="driver@gmail.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-xl text-xs font-sans placeholder-zinc-700 outline-none transition-colors"
+                    className="w-full pl-10 pr-3 py-3 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none transition-colors"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Phone Mobile *</label>
+                <label className="font-mono text-[10px] text-gray-550 uppercase tracking-wider">Phone Mobile *</label>
                 <div className="relative">
-                  <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                  <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                   <input
                     type="tel"
                     required
                     placeholder="343-297-7886"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-xl text-xs font-sans placeholder-zinc-700 outline-none transition-colors"
+                    className="w-full pl-10 pr-3 py-3 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none transition-colors"
                   />
                 </div>
               </div>
             </div>
 
             {/* Row 2: Vehicle Telemetry Specs */}
-            <div className="bg-zinc-950 border border-zinc-850 p-4 rounded-2xl flex flex-col gap-4">
-              <span className="font-mono text-[9px] text-zinc-500 uppercase tracking-wider flex items-center gap-2">
-                <Car className="w-3.5 h-3.5 text-zinc-650" />
+            <div className="bg-black/40 border border-white/10 p-4 flex flex-col gap-4">
+              <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider flex items-center gap-2">
+                <Car className="w-3.5 h-3.5 text-red-500" />
                 <span>VEHICLE IDENTIFICATION DATA</span>
               </span>
 
               <div className="grid grid-cols-3 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[9px] text-zinc-500 font-sans uppercase">Aero Year *</label>
+                  <label className="text-[9px] text-gray-500 font-sans uppercase">Aero Year *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. 2018"
                     value={vehicleYear}
                     onChange={(e) => setVehicleYear(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-lg text-xs font-sans placeholder-zinc-700 outline-none"
+                    className="w-full px-3 py-2.5 bg-[#0d0d0d] border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-[9px] text-zinc-500 font-sans uppercase">Vehicle Make *</label>
+                  <label className="text-[9px] text-gray-500 font-sans uppercase">Vehicle Make *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Audi"
                     value={vehicleMake}
                     onChange={(e) => setVehicleMake(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-lg text-xs font-sans placeholder-zinc-700 outline-none"
+                    className="w-full px-3 py-2.5 bg-[#0d0d0d] border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none"
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label className="text-[9px] text-zinc-500 font-sans uppercase">Model Subtype *</label>
+                  <label className="text-[9px] text-gray-500 font-sans uppercase">Model Subtype *</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. S4 Quattro"
                     value={vehicleModel}
                     onChange={(e) => setVehicleModel(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-lg text-xs font-sans placeholder-zinc-700 outline-none"
+                    className="w-full px-3 py-2.5 bg-[#0d0d0d] border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none"
                   />
                 </div>
               </div>
@@ -242,51 +242,51 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
             {/* Row 3: Service type selecting */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col gap-1.5 sm:col-span-1">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Select Service *</label>
+                <label className="font-mono text-[10px] text-gray-555 uppercase tracking-wider">Select Service *</label>
                 <select
                   required
                   value={serviceId}
                   onChange={(e) => setServiceId(e.target.value)}
-                  className="w-full px-3 py-3.5 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-300 rounded-xl text-xs font-sans outline-none"
+                  className="w-full px-3 py-3.5 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans outline-none"
                 >
-                  <option value="" disabled>-- Pick Category --</option>
+                  <option value="" disabled className="bg-black text-white">-- Pick Category --</option>
                   {SERVICES.map((s) => (
-                    <option key={s.id} value={s.id}>{s.title}</option>
+                    <option key={s.id} value={s.id} className="bg-black text-white">{s.title}</option>
                   ))}
-                  <option value="custom">Other Custom Modifications</option>
+                  <option value="custom" className="bg-black text-white">Other Custom Modifications</option>
                 </select>
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Desired Date *</label>
+                <label className="font-mono text-[10px] text-gray-555 uppercase tracking-wider">Desired Date *</label>
                 <div className="relative">
-                  <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-650 pointer-events-none" />
+                  <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500 pointer-events-none" />
                   <input
                     type="date"
                     required
                     value={bookingDate}
                     onChange={(e) => setBookingDate(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-300 rounded-xl text-xs font-sans outline-none"
+                    className="w-full pl-10 pr-3 py-3 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans outline-none"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Time Window *</label>
+                <label className="font-mono text-[10px] text-gray-555 uppercase tracking-wider">Time Window *</label>
                 <div className="relative">
-                  <Clock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-650 pointer-events-none" />
+                  <Clock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500 pointer-events-none" />
                   <select
                     required
                     value={bookingTime}
                     onChange={(e) => setBookingTime(e.target.value)}
-                    className="w-full pl-10 pr-3 py-3.5 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-300 rounded-xl text-xs font-sans outline-none"
+                    className="w-full pl-10 pr-3 py-3.5 bg-black/60 border border-white/10 focus:border-red-600 text-gray-300 text-xs font-sans outline-none"
                   >
-                    <option value="">-- Arrival Hour --</option>
-                    <option value="08:00 AM">08:00 AM (Early Drop-off)</option>
-                    <option value="10:00 AM">10:00 AM</option>
-                    <option value="12:00 PM">12:00 PM (Lunch Intake)</option>
-                    <option value="02:00 PM">02:00 PM</option>
-                    <option value="04:00 PM">04:00 PM (Late Check)</option>
+                    <option value="" className="bg-black text-white">-- Arrival Hour --</option>
+                    <option value="08:00 AM" className="bg-black text-white">08:00 AM (Early Drop-off)</option>
+                    <option value="10:00 AM" className="bg-black text-white">10:00 AM</option>
+                    <option value="12:00 PM" className="bg-black text-white">12:00 PM (Lunch Intake)</option>
+                    <option value="02:00 PM" className="bg-black text-white">02:00 PM</option>
+                    <option value="04:00 PM" className="bg-black text-white">04:00 PM (Late Check)</option>
                   </select>
                 </div>
               </div>
@@ -294,25 +294,25 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
 
             {/* Note Textarea */}
             <div className="flex flex-col gap-1.5">
-              <label className="font-mono text-[10px] text-zinc-500 uppercase tracking-wider">Brief symptoms or upgrade details (Optional)</label>
+              <label className="font-mono text-[10px] text-gray-555 uppercase tracking-wider">Brief symptoms or upgrade details (Optional)</label>
               <textarea
                 placeholder="e.g. Squeaky brakes high metal grind over 50km/h, or custom catback exhaust parts are currently ready for bolt-on installation..."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 rows={3}
-                className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 focus:border-red-600 text-zinc-100 rounded-xl text-xs font-sans placeholder-zinc-700 outline-none transition-colors resize-none"
+                className="w-full px-4 py-3 bg-black/60 border border-white/10 focus:border-red-600 text-white text-xs font-sans placeholder-gray-650 outline-none transition-colors resize-none"
               />
             </div>
 
             {/* Status alerts */}
             {validationError && (
-              <div className="p-3 bg-red-950/20 border border-red-900/40 text-red-500 text-xs font-semibold rounded-xl font-sans">
+              <div className="p-3 bg-red-950/20 border border-red-900/40 text-red-500 text-xs font-semibold font-sans">
                 {validationError}
               </div>
             )}
 
             {submittedSuccessfully && (
-              <div className="p-4 bg-emerald-950/20 border border-emerald-900/40 text-emerald-400 text-xs rounded-xl font-sans flex items-start gap-3">
+              <div className="p-4 bg-emerald-950/20 border border-emerald-900/40 text-emerald-400 text-xs font-sans flex items-start gap-3">
                 <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
                 <div>
                   <h5 className="font-bold text-emerald-300 uppercase mb-0.5">Booking Registered Successfully!</h5>
@@ -325,7 +325,7 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-4 bg-red-600 hover:bg-red-700 hover:translate-y-[-1px] active:translate-y-0 text-white rounded-xl text-xs font-bold font-sans uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-red-600/10 disabled:opacity-50"
+              className="w-full py-4 bg-red-600 hover:bg-red-700 hover:translate-y-[-1px] active:translate-y-0 text-white text-xs font-black uppercase tracking-tighter transition-all cursor-pointer"
             >
               {submitting ? "Intaking Secure Reservation..." : "Submit Appointment Request"}
             </button>
@@ -334,32 +334,32 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
         </div>
 
         {/* COLUMN 2: session active listings */}
-        <div className="lg:col-span-5 bg-zinc-950 border border-zinc-850 rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full relative overflow-hidden">
+        <div className="lg:col-span-5 bg-black/60 border border-white/10 p-6 sm:p-8 flex flex-col justify-between h-full relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[100px] h-[100px] bg-red-600/5 rounded-full blur-xl pointer-events-none" />
           
           <div>
-            <div className="flex items-center gap-2 mb-4 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg w-fit">
+            <div className="flex items-center gap-2 mb-4 bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg w-fit">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              <span className="font-mono text-[9px] uppercase tracking-wider text-zinc-400 font-bold">
+              <span className="font-mono text-[9px] uppercase tracking-wider text-gray-400 font-bold">
                 Local Telemetry Database
               </span>
             </div>
 
-            <h4 className="font-sans font-extrabold text-white text-base tracking-wider uppercase mb-1">
+            <h4 className="font-sans font-black italic text-white text-base tracking-wider uppercase mb-1">
               Active Booking Entries
             </h4>
-            <p className="text-[11px] font-sans text-zinc-500 mb-6">
+            <p className="text-[11px] font-sans text-gray-500 mb-6">
               Listing of your pending scheduled appointments preserved in local state storage. Give us a call or visit to sync.
             </p>
 
             {activeBookings.length === 0 ? (
-              <div className="border border-dashed border-zinc-800 rounded-xl p-8 text-center flex flex-col items-center justify-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-zinc-900 flex items-center justify-center text-zinc-650 border border-zinc-850">
+              <div className="border border-dashed border-white/15 rounded-xl p-8 text-center flex flex-col items-center justify-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-red-500 border border-white/10">
                   <Car className="w-5 h-5" />
                 </div>
                 <div>
-                  <h5 className="font-sans text-zinc-400 text-xs font-bold uppercase leading-none mb-1">No Active Bookings</h5>
-                  <p className="text-zinc-600 font-sans text-[10px]">Your pending mechanical reservations will list right here.</p>
+                  <h5 className="font-sans text-gray-400 text-xs font-bold uppercase leading-none mb-1">No Active Bookings</h5>
+                  <p className="text-gray-550 font-sans text-[10px]">Your pending mechanical reservations will list right here.</p>
                 </div>
               </div>
             ) : (
@@ -367,35 +367,35 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
                 {activeBookings.map((b) => (
                   <div 
                     key={b.id}
-                    className="bg-zinc-900 border border-zinc-800 p-4 rounded-xl flex items-start justify-between gap-4 transition-colors hover:border-zinc-700/80"
+                    className="bg-white/5 border border-white/10 p-4 rounded-xl flex items-start justify-between gap-4 transition-colors hover:border-red-600/35"
                   >
                     <div className="text-left flex flex-col gap-1.5">
                       <div className="flex gap-2 items-center">
                         <span className="font-mono text-[9px] bg-red-600/10 text-red-500 border border-red-900/30 px-1.5 py-0.5 rounded font-bold">
                           {b.id}
                         </span>
-                        <span className="font-mono text-[9px] bg-zinc-950 text-zinc-400 border border-zinc-800 px-1.5 py-0.5 rounded font-semibold uppercase">
+                        <span className="font-mono text-[9px] bg-black text-gray-450 border border-white/10 px-1.5 py-0.5 rounded font-semibold uppercase">
                           {b.status}
                         </span>
                       </div>
 
-                      <h5 className="font-sans text-xs font-extrabold text-white leading-tight uppercase mt-1">
+                      <h5 className="font-sans text-xs font-black italic text-white leading-tight uppercase mt-1">
                         {b.vehicleYear} {b.vehicleMake} {b.vehicleModel}
                       </h5>
 
-                      <p className="text-[11px] font-sans text-zinc-400 font-semibold">
+                      <p className="text-[11px] font-sans text-gray-400 font-semibold">
                         {getServiceLabel(b.serviceId)}
                       </p>
 
-                      <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[10px] text-zinc-500 mt-1">
-                        <span>Date: <span className="text-zinc-300 font-medium">{b.bookingDate}</span></span>
-                        <span>Time: <span className="text-zinc-300 font-medium">{b.bookingTime}</span></span>
+                      <div className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[10px] text-gray-500 mt-1">
+                        <span>Date: <span className="text-gray-300 font-medium">{b.bookingDate}</span></span>
+                        <span>Time: <span className="text-gray-300 font-medium">{b.bookingTime}</span></span>
                       </div>
                     </div>
 
                     <button
                       onClick={() => cancelBooking(b.id)}
-                      className="p-1 px-1.5 text-zinc-650 hover:text-red-500 hover:bg-red-950/20 rounded transition-all cursor-pointer border border-transparent hover:border-red-900/30"
+                      className="p-1 px-1.5 text-gray-500 hover:text-red-500 hover:bg-red-950/20 rounded transition-all cursor-pointer border border-transparent hover:border-red-900/30"
                       title="Delete local entry"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -406,15 +406,15 @@ export default function BookingSection({ preselectedServiceId, onClearPreselecti
             )}
           </div>
 
-          <div className="mt-8 border-t border-zinc-850 pt-5 text-left flex flex-col gap-2.5">
-            <span className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest leading-none">
+          <div className="mt-8 border-t border-white/10 pt-5 text-left flex flex-col gap-2.5">
+            <span className="font-mono text-[10px] text-gray-550 uppercase tracking-widest leading-none">
               Shop Telemetry Support
             </span>
-            <div className="flex items-center gap-3 font-mono text-[11px] text-zinc-400">
+            <div className="flex items-center gap-3 font-mono text-[11px] text-gray-400">
               <ShieldCheck className="w-4 h-4 text-emerald-500" />
               <span>Diagnostic check completes during intake drop-off</span>
             </div>
-            <p className="text-[10px] font-sans text-zinc-500">
+            <p className="text-[10px] font-sans text-gray-550">
               * Rates represent raw entry-level calculations. Exhaust system, tuning, and coilovers require active parts discussion beforehand.
             </p>
           </div>
